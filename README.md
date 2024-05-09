@@ -11,9 +11,9 @@ Welcome to our Food Delivery Website repository! This project is an online platf
 <h3>To get started with our Food Delivery Website, follow these steps</h3>
 
 Clone this repository to your local machine using git clone.
-Install the necessary dependencies by running <h6>npm install</h6>.
+Install the necessary dependencies by running <h6>npm install</h6>
 Configure the environment variables for  database connection.
-Run the application locally using <h6>npm start</h6>.
+Run the application locally using <h6>npm start</h6>
 Explore the website!
 <h1>Contributing</h1>
 We welcome contributions from the community to help improve and enhance our Food Delivery Website. Whether it's fixing bugs, adding new features, or suggesting improvements, we appreciate your input. To contribute, please follow our contribution guidelines.
