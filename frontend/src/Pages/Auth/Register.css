@@ -1,0 +1,7 @@
+.card1{
+    background-image: url('../../Images/formimg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    Lazy-Loading:'true';
+}

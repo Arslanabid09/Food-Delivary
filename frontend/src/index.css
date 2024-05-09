@@ -1,0 +1,25 @@
+body{
+    font-family: cursive !important;
+    background-color: bisque;
+    animation: card-content-fade 2s ease-in-out forwards;
+}
+
+@keyframes card-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes card-content-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

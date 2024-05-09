@@ -1,0 +1,8 @@
+.Carasoul{
+    font-family: cursive !important;
+    background-color: bisque;
+    animation: card-content-fade 0.4s ease-in-out forwards;
+}
+.Carasoulpic{
+    Lazy-Loading: 'true';
+} 

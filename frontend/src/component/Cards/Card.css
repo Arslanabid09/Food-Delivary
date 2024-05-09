@@ -1,0 +1,73 @@
+.pro-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  animation: card-appear 0.5s ease-in-out forwards;
+
+  }
+  .card-img-top {
+    width: 100%;
+      height: 60%;
+      /* background-image: url("../../Images//carasoul2.jpg"); Replace with the actual image URL */
+      background-size: cover;
+      background-position: center;
+    animation: card-content-fade 0.8s ease-in-out forwards;
+  }
+  .card-img-top:hover{
+    transform: scale(1.1);
+    transition: transform 1s;
+  }
+  .procard-body {
+    padding: 10px;
+    flex: 1;
+    animation: card-content-fade 0.8s ease-in-out forwards;
+  }
+  .procard-title {
+    font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    animation: card-content-fade 0.8s ease-in-out forwards;
+
+  }
+  .procard-text {
+    font-size: 14px;
+    color: #333;
+    animation: card-content-fade 0.8s ease-in-out forwards;
+  }
+  .procard-price {
+    font-size: 16px;
+      font-weight: bold;
+      margin-top: auto;
+      animation: card-content-fade 0.8s ease-in-out forwards;
+    }
+
+  .add-to-cart {
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    animation: card-content-fade 0.8s ease-in-out forwards;
+  }
+
+   @keyframes card-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes card-content-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
