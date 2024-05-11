@@ -43,12 +43,10 @@ const Header = () => {
                 </li>
             </ul>
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-              <li className="nav-item">
-                  <Link className="nav-link text-white fw-semibold" to="/cart">Go Cart</Link>
-                </li>
               <li>
                 {isLogin ?
-                  <button type="button" onClick={logOut} className="btn btn-dark text-light fw-semibold mx-2 btn-sm">LogOut</button> :
+                   <Link className="btn btn-danger text-light fw-semibold mx-2 btn-sm" to="/orderdetailes">Order History</Link>
+                   :
                   <Link to='/login' type="button" className="btn btn-dark text-light fw-semibold my-1 mx-2  btn-sm">Login</Link>}
               </li>
               <li>

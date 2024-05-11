@@ -4,6 +4,11 @@ import { Orderitems } from "../../Models/Orderitems.Models.js";
 
 const orderDetailes = async(req,res)=>{
     try {
+        if( !req.body.subArea || !req.body.streetName || !req.body.Area 
+            || !req.body.City || !req.body.ContectNumber
+        ){
+            return res.status(400).send({Message:"All fields are required"})
+        }
         const orderItemIds = Promise.all( req.body.orderItems.map(async orderItem =>{
             let newOrderItem = new Orderitems({
                 productId:orderItem.productId,
@@ -13,13 +18,15 @@ const orderDetailes = async(req,res)=>{
             return  newOrderItem._id
         }))
         const orderids = await orderItemIds
+
         
         const newOrder = await new Orders({
             customer:req.body.customer,
             orderItems:orderids,
             price:req.body.price,
-            address:req.body.address,
-            status:req.body.status,
+            subArea:req.body.subArea,
+            streetName:req.body.streetName,
+            ContectNumber:req.body.ContectNumber,
             orderDate:req.body.orderDate
         }).save()
         if(newOrder){

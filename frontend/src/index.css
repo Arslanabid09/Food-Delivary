@@ -1,7 +1,7 @@
 body{
     font-family: cursive !important;
     background-color: bisque;
-    animation: card-content-fade 2s ease-in-out forwards;
+    animation: card-content-fade 1.5s ease-in-out forwards;
 }
 
 @keyframes card-appear {

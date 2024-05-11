@@ -12,14 +12,23 @@ const orderSchema = new mongoose.Schema({
     price:{
         type: String,
     },
-    address:{
+    City:{
         type:String,
-        required: true
+
     },
-    status:{
-        type: String,
-        default: "Pending"
+    Area:{
+        type:String,
     },
+    subArea:{
+        type:String,
+    },
+    streetName:{
+        type:String,
+    },
+    ContectNumber:{
+        type:String,
+    },
+    
     orderDate:{
         type: Date,
         default: Date.now

@@ -45,7 +45,7 @@ const ProductList = () => {
                     <h5 class="procard-title  text-danger">{product.title.slice(0, 20)}..!</h5>
                     <p class="procard-text text-light">{product.description.slice(0, 35)}...!</p>
                     <p class="procard-price text-danger ">{product.price}<small className='text-light'>.Rs</small></p>
-                    <Link to={`menupage/singleproduct/${product._id}`} class="btn btn-danger text-light add-to-cart  p-2 rounded border-0  btn-sm  w-100">ADD TO BUCKET</Link>
+                    <Link to={`menupage/singleproduct/${product._id}`} class="btn btn-danger text-light add-to-cart  p-2 rounded border-0  btn-sm  w-100">Order Now</Link>
                   </div>
                 </div>
               </div>
