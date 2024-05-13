@@ -1,17 +1,9 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
-import toast from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom'
 const UserProfile = () => {
     const isLogin = localStorage.getItem('users')
     const userInfo = isLogin? JSON.parse(isLogin):null
-     const navigate = useNavigate();
-    const logOut = () => {
-     const remove = localStorage.removeItem('users');
-      toast.success('Logout Successfully');
 
-      navigate('/login');
-    };
     return (
     <div>
     {/* Button trigger modal */}
@@ -65,7 +57,6 @@ const UserProfile = () => {
         </div>
           </div>
           <div className="modal-footer">
-            <button  onClick={logOut} className='btn btn-danger ' data-bs-dismiss="modal">Logout</button>
             <button type="button" className="btn btn-info" data-bs-dismiss="modal">Close</button>
           </div>
         </div>

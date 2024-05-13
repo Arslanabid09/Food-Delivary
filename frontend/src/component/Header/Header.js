@@ -1,19 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import { Link} from 'react-router-dom';
 import UserProfile from '../../Pages/UserProfile/UserProfile';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   // Retrieve user data from localStorage and parse it as JSON
   const isLogin = JSON.parse(localStorage.getItem('users'));
-
-  const navigate = useNavigate(); 
-  
-  const logOut = () => {
-    localStorage.removeItem('users');
-    toast.success('Logout Successfully');
-    navigate('/login');
-  };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -25,15 +19,15 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active text-white fw-semibold mx-2" aria-current="page" to="/">Home</Link>
-              </li>
               {isLogin && isLogin.role === 1 ? 
                 <li className="nav-item">
                   <Link className="nav-link text-white fw-semibold" to="/dashboard">Dashboard</Link>
                 </li>
                :
-               null
+              <li className="nav-item">
+                <Link className="nav-link active text-white fw-semibold mx-2" aria-current="page" to="/">Home</Link>
+              </li>
+              
               }
               <li className="nav-item">
                   <Link className="nav-link text-white fw-semibold" to="/about">About Our Food</Link>
@@ -43,9 +37,13 @@ const Header = () => {
                 </li>
             </ul>
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
+            <li className="nav-item">
+                <Link className="btn btn-danger text-light fw-semibold mx-2 btn-sm" to="/orderdetailes">Order History</Link>
+              </li>
               <li>
                 {isLogin ?
-                   <Link className="btn btn-danger text-light fw-semibold mx-2 btn-sm" to="/orderdetailes">Order History</Link>
+                   <button onClick={()=>{localStorage.removeItem('users');  toast.success('Logout Successfully');navigate('/login');
+                   }} className="btn btn-danger text-light fw-semibold mx-2 btn-sm" >LogOut</button>
                    :
                   <Link to='/login' type="button" className="btn btn-dark text-light fw-semibold my-1 mx-2  btn-sm">Login</Link>}
               </li>

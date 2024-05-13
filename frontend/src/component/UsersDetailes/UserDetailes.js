@@ -2,7 +2,9 @@ import React, { useContext, useEffect } from 'react'
 import '../../component/UsersDetailes/getuser.css'
 import { UserContext } from '../../Context/users'
 import { Link } from 'react-router-dom'
+import { ProductContext } from '../../Context/Products'
 const UserDetailes = () => {
+  const {getOrders,Order} = useContext(ProductContext)
   const {user,deleteUser,getUser} = useContext(UserContext)
     console.log(user);
     const formatDate = (date) => {
@@ -15,6 +17,7 @@ const UserDetailes = () => {
     }
     useEffect(()=>{
       getUser();
+      getOrders();
   },[])
   return (
     <>
@@ -30,11 +33,11 @@ const UserDetailes = () => {
           <div className="row align-items-center mb-2 d-flex">
             <div className="col-8">
               <h2 className="d-flex align-items-center mb-0">
-                3,243
+                {Order.length}
               </h2>
             </div>
             <div className="col-4 text-right">
-              <span>12.5% <i className="fa fa-arrow-up" /></span>
+              <span>{Order.length/100}%<i className="fa fa-arrow-up" /></span>
             </div>
           </div>
           <div className="progress mt-1 " data-height={8} style={{height: 8}}>

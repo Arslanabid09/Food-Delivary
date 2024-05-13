@@ -43,8 +43,6 @@ const Card = () => {
           </div>
         ))}
       </div>
-
-      {/* Display products based on selected category */}
       {selectedCategory ? (
         <div>
           <h2 className='mt-5 fw-semibold fs-1'>{selectedCategory}</h2>
