@@ -26,9 +26,7 @@ const getSingleOrders = async (req, res) => {
       .populate({ path: "orderItems", populate: "productId" })
       .sort({ "orderDate": -1 });
 
-    if (!orderList || orderList.length === 0) {
-      return res.status(400).send({ Message: "No Orders Found for this user" });
-    } else {
+    if (orderList){
       return res.status(200).send(orderList);
     }
   } catch (error) {

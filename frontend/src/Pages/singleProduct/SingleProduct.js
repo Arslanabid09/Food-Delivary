@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import '../../component/Cards/Card.css'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
 
@@ -9,6 +9,15 @@ const SingleProduct = () => {
   const [products, setProducts] = useState([])
   const [quantity, setQuantity] = useState(1)
   const params = useParams();
+  useEffect(() => {
+    const SingleProduct = async () => {
+      const response = await fetch(`http://localhost:8099/api/v1/ProductCrud/singleProduct/${params.id}`)
+      const result = await response.json();
+      setProducts(result);
+    }
+    SingleProduct();
+    window.scrollTo(0, 0)
+  },[params.id])
   // States for order Data
   const [selectedCity, setSelectedCity] = useState('');
   const [selectArea, setSelectArea] = useState('')
@@ -56,15 +65,6 @@ const SingleProduct = () => {
       console.error('Error placing order:', error);
     }
   };
-
-  const SingleProduct = async () => {
-    const response = await fetch(`http://localhost:8099/api/v1/ProductCrud/singleProduct/${params.id}`)
-    const result = await response.json();
-    setProducts(result);
-  }
-  useEffect(() => {
-    SingleProduct()
-  }, [])
 
   // Options for city, area, and sub-area
   const cityOptions = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi', 'Faisalabad'];

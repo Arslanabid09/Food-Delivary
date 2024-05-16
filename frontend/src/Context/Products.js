@@ -8,7 +8,6 @@ const user = JSON.parse(localStorage.getItem('users'))
 
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
-    const [isLoading,setIsLoading] = useState(true)
     const [Order,setOrder] = useState([])
     const [singleOrder,setSingleOrder] = useState([]);
     // getting all products from database
@@ -17,9 +16,6 @@ export const ProductProvider = ({ children }) => {
             const response = await fetch("http://localhost:8099/api/v1/ProductCrud/getproducts")
             const result = await response.json();
             setProducts(result);
-            if(!products) {
-                return <div><Loading/></div>
-            }
         } catch (error) {
             console.log(`ERROR:${error}`);
 
@@ -37,7 +33,6 @@ export const ProductProvider = ({ children }) => {
         const result = await response.json();
         setSingleOrder(result);
     }
-    
     return (
         <ProductContext.Provider value={{products,getProducts,getOrders,Order,setOrder,getSingleOrder,singleOrder,setSingleOrder }}>
             {children}

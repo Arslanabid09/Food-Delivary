@@ -21,7 +21,8 @@ const Login = () => {
         localStorage.setItem('users',JSON.stringify(result))
         if(response.ok){
             toast.success(result.Message)
-            Navigate('/')
+            if(result.role == 1){Navigate('/dashboard')}
+            else{Navigate('/')}
 
         }else{
             toast.error(result.Message)

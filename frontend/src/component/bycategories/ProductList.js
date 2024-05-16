@@ -32,20 +32,20 @@ const ProductList = () => {
           <div className='row mt-2'>
             {groupedProducts[category].map((product) => (
               <div className="col-12 col-md-6 col-lg-3" key={product._id}>
-                <div class="procard bg-dark rounded mt-5">
-                  <div class="card-img-top">
+                <div className="procard bg-dark rounded mt-5">
+                  <div className="card-img-top">
                     <img
                       src={`http://localhost:8099/Images/${product.productimage}`}
-                      class="img-responsive w-100  mx-auto "
+                      className="img-responsive w-100  mx-auto "
                       alt={product.title}
                       loading='lazy'
                     />
                   </div>
-                  <div class="procard-body">
-                    <h5 class="procard-title  text-danger">{product.title.slice(0, 20)}..!</h5>
-                    <p class="procard-text text-light">{product.description.slice(0, 35)}...!</p>
-                    <p class="procard-price text-danger ">{product.price}<small className='text-light'>.Rs</small></p>
-                    <Link to={`menupage/singleproduct/${product._id}`} class="btn btn-danger text-light add-to-cart  p-2 rounded border-0  btn-sm  w-100">Order Now</Link>
+                  <div className="procard-body">
+                    <h5 className="procard-title  text-danger">{product.title.slice(0, 20)}..!</h5>
+                    <p className="procard-text text-light">{product.description.slice(0, 35)}...!</p>
+                    <p className="procard-price text-danger ">{product.price}<small className='text-light'>.Rs</small></p>
+                    <Link to={`menupage/singleproduct/${product._id}`} className="btn btn-danger text-light add-to-cart  p-2 rounded border-0  btn-sm  w-100">Order Now</Link>
                   </div>
                 </div>
               </div>

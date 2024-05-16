@@ -11,5 +11,6 @@ import NotFound from "./Pages/404/NotFound";
 import Loading from "./component/Loading/Loading";
 import SingleProduct from "./Pages/singleProduct/SingleProduct";
 import Card from './component/Cards/Card'
+import AllOrders from "./Pages/OrderDetailes/AllOrders";
 
-export {Home,Register,Login,Dashboard,ProtectedRoutes,Unauthoraized,CreateProducts,UpdatePage,About,NotFound,SingleProduct,Loading,Card}
+export {Home,Register,Login,Dashboard,ProtectedRoutes,Unauthoraized,CreateProducts,UpdatePage,About,NotFound,SingleProduct,Loading,Card,AllOrders}

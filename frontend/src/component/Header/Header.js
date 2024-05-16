@@ -29,17 +29,23 @@ const Header = () => {
               </li>
               
               }
-              <li className="nav-item">
+           {  isLogin && isLogin.role === 1 ? 
+            <li className="nav-item">
+            <Link className="nav-link active text-white fw-semibold mx-2" aria-current="page" to="/dashboard/createfoodItem">Add Food Items</Link>
+          </li>
+           :  <li className="nav-item">
                   <Link className="nav-link text-white fw-semibold" to="/about">About Our Food</Link>
-                </li>
-              <li className="nav-item">
+                </li>}
+             { isLogin && isLogin.role === 1 ? <li className="nav-item">
+                  <Link className="nav-link text-white fw-semibold" to="/dashboard/orders">Order Detailes</Link>
+                </li> : <li className="nav-item">
                   <Link className="nav-link text-white fw-semibold" to="/menupage">Our Menu</Link>
-                </li>
+                </li>}
             </ul>
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-            <li className="nav-item">
+            {isLogin? <li className="nav-item">
                 <Link className="btn btn-danger text-light fw-semibold mx-2 btn-sm" to="/orderdetailes">Order History</Link>
-              </li>
+              </li>:null}
               <li>
                 {isLogin ?
                    <button onClick={()=>{localStorage.removeItem('users');  toast.success('Logout Successfully');navigate('/login');

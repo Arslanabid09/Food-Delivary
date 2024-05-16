@@ -90,7 +90,7 @@ const Register = () => {
             </div>
           </div>
           <div className="card1 text-white  py-5 d-md-down-none" style={{width: '44%'}}>
-    <div className="card-body text-center">
+    <div className="card-body  text-center">
       <div>
         <h2>Already has an Account?</h2>
         <Link to='/login' type="button" className="btn btn-primary active mt-3">Login Now!</Link>

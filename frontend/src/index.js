@@ -9,11 +9,12 @@ import {
   Home,
   Register,Login,Dashboard,Unauthoraized,Card
   ,CreateProducts,UpdatePage,ProtectedRoutes,
-  About,NotFound,Loading,SingleProduct,}
+  About,NotFound,Loading,SingleProduct,AllOrders}
  from '../src/indexx';
 import { UserProvider } from './Context/users';
 import { ProductProvider } from './Context/Products';
 import OrderDetailes from './Pages/OrderDetailes/OrderDetailes';
+import ViewOrder from './Pages/OrderDetailes/viewOrder';
 const role = {
   user:0,
   admin:1,
@@ -33,7 +34,9 @@ const  router = createBrowserRouter(
       <Route path='/orderDetailes' element={<OrderDetailes/>}/>
   {/* Protected Routes */}
       <Route element={<ProtectedRoutes allowRoles={[role.admin]}/>}>
-  <Route path='/createProduct' element={<CreateProducts/>}/>
+        <Route path='/dashboard/orders' element={<AllOrders/>} />
+        <Route path='/dashboard/orders/:id' element={<ViewOrder/>} />
+  <Route path='/dashboard/createfoodItem' element={<CreateProducts/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
       <Route path='/dashboard/:id' element={<UpdatePage/>}/>
       </Route>

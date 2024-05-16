@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../../Context/Products';
 import '../../Pages/OrderDetailes/order.css';
 const OrderDetails = () => {
-  const { singleOrder, getSingleOrder } = useContext(ProductContext);
+  const { singleOrder} = useContext(ProductContext);
   const [orderCategories, setOrderCategories] = useState([]);
-
+  const user = JSON.parse(localStorage.getItem('users'))
+  
   useEffect(() => {
-    getSingleOrder();
-  }, []);
+    const categories = groupedOrderBydate();
+      setOrderCategories(categories);
+    },[singleOrder],[user.name]);
 
   const groupedOrderBydate = () => {
     const orderCategories = {};
@@ -20,11 +22,6 @@ const OrderDetails = () => {
     });
     return orderCategories;
   };
-
-  useEffect(() => {
-    const categories = groupedOrderBydate();
-    setOrderCategories(categories);
-  }, [singleOrder]);
 
   return (
     <>
@@ -53,7 +50,7 @@ const OrderDetails = () => {
       </div>
     </div>
   ))}
-</div>:<h1 >No Order Found</h1>}
+</div>:<h1 className='text-center' >No Order Found</h1>}
 
 
 

@@ -1,7 +1,14 @@
-.card1{
+/* Default styling for .card1 */
+.card1 {
     background-image: url('../../Images/formimg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    Lazy-Loading:'true';
+}
+
+/* Media query to hide the background image on screens smaller than 768px (phone screens) */
+@media (max-width: 767px) {
+    .card1 {
+        background-image: none; /* Hide the background image */
+    }
 }
