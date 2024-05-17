@@ -43,9 +43,11 @@ const Header = () => {
                 </li>}
             </ul>
             <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-            {isLogin? <li className="nav-item">
+            {isLogin && !isLogin.role == 1? 
+            <li className="nav-item">
                 <Link className="btn btn-danger text-light fw-semibold mx-2 btn-sm" to="/orderdetailes">Order History</Link>
-              </li>:null}
+              </li>:
+              null}
               <li>
                 {isLogin ?
                    <button onClick={()=>{localStorage.removeItem('users');  toast.success('Logout Successfully');navigate('/login');

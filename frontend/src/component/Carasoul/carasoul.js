@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../component/Carasoul/Carasoul.css'
 import Pic1 from '../../Images/carasoul1.png'
 import Pic2 from '../../Images/carasoul2.jpg'
 import Pic3 from '../../Images/carasoul3.jpg'
 import Pic4 from '../../Images/carasoul4.png'
 import Pic5 from '../../Images/carasoul5.jpg'
+
 
 const Carasoul = () => {
   return (

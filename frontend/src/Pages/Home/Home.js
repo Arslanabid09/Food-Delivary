@@ -1,14 +1,20 @@
-import React from 'react'
-import Carasoul from '../../component/Carasoul/carasoul'
-import ProductList from '../../component/bycategories/ProductList'
+import React, { Suspense } from 'react';
+import ProductList from '../../component/bycategories/ProductList';
+import { Loading } from '../../indexx';
+
+import Carasoul from '../../component/Carasoul/carasoul';
 
 const Home = () => {
   return (
     <>
-    <div className="home text-black"><Carasoul/></div>
-    <div className="home text-black"><ProductList/></div>
+      <div className="home text-black">
+
+          <Carasoul />
+        
+      </div>
+      <div className="home text-black"><ProductList /></div>
     </>
   )
 }
 
-export default Home
+export default Home;

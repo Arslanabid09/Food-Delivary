@@ -12,5 +12,7 @@ import Loading from "./component/Loading/Loading";
 import SingleProduct from "./Pages/singleProduct/SingleProduct";
 import Card from './component/Cards/Card'
 import AllOrders from "./Pages/OrderDetailes/AllOrders";
+import OrderDetailes from "./Pages/OrderDetailes/OrderDetailes";
+import ViewOrder from "./Pages/OrderDetailes/viewOrder";
 
-export {Home,Register,Login,Dashboard,ProtectedRoutes,Unauthoraized,CreateProducts,UpdatePage,About,NotFound,SingleProduct,Loading,Card,AllOrders}
+export {Home,Register,Login,Dashboard,ProtectedRoutes,Unauthoraized,CreateProducts,UpdatePage,About,NotFound,SingleProduct,Loading,Card,AllOrders,OrderDetailes,ViewOrder}
